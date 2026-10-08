@@ -105,12 +105,12 @@ Can a server in a new private subnet download updates? Why?
 
 | Rule number | Source | Allow or Deny |
 | --- | --- | --- |
-| <answer> | <answer> | <answer> |
-| <answer> | <answer> | <answer> |
+| <100> | <0.0.0.0/0> | <Allow> |
+| <*> | <0.0.0.0/0> | <Deny> |
 
 How is a network ACL different from a security group?
 
-<answer>
+<A network ACL controls traffic at the subnet level, while a security group controls traffic at the instance/resource level. Network ACLs can allow or deny traffic, while security groups only allow traffic.>
 
 Screenshot 3. Save it as `screenshot-3-network-acl.png` in your folder. The image line below shows it.
 
@@ -120,11 +120,11 @@ Screenshot 3. Save it as `screenshot-3-network-acl.png` in your folder. The imag
 
 Inbound rule (type and source):
 
-<answer>
+<All traffic and sg-0c5b6d4081cf0a534>
 
 Which resources can send traffic to an instance that uses it?
 
-<answer>
+<Only resources that use the security group sg-0c5b6d4081cf0a534 can send traffic to the instance.>
 
 ---
 
@@ -132,8 +132,8 @@ Which resources can send traffic to an instance that uses it?
 
 ### B1. Plan two subnets
 
-- Public subnet CIDR: <answer>
-- Private subnet CIDR: <answer>
+- Public subnet CIDR: <10.170.0.0/24>
+- Private subnet CIDR: <10.170.1.0/24>
 
 ### B2. Route tables
 
@@ -141,14 +141,14 @@ Route table of the public subnet:
 
 | Destination | Target |
 | --- | --- |
-| <answer> | <answer> |
-| <answer> | <answer> |
+| <10.170.0.0/16> | <local> |
+| <0.0.0.0/0> | <Internet Gateway> |
 
 Route table of the private subnet:
 
 | Destination | Target |
 | --- | --- |
-| <answer> | <answer> |
+| <10.170.0.0/16> | <local> |
 
 ### B3. My VPC diagram
 
