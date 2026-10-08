@@ -68,8 +68,8 @@ What uses the missing address in the subnet with the lowest number?
 
 | Destination | Target |
 | --- | --- |
-| <answer> | <answer> |
-| <answer> | <answer> |
+| <0.0.0.0/0> | <igw-0943e7e6f88293168> |
+| <172.31.0.0/16> | <local> |
 
 Screenshot 2. Save it as `screenshot-2-routes.png` in your folder. The image line below shows it.
 
@@ -79,27 +79,27 @@ Screenshot 2. Save it as `screenshot-2-routes.png` in your folder. The image lin
 
 Are the default subnets public or private? Which route proves it?
 
-<answer>
+<0.0.0.0/0 to igw-0943e7e6f88293168>
 
 ### A6. The internet gateway
 
 State of the internet gateway:
 
-<answer>
+<Attached>
 
 What happens to the default subnets if the gateway is detached?
 
-<answer>
+<he default subnets would no longer have internet access through the Internet Gateway, so instances in those subnets could not be reached from or access the public internet through that gateway.>
 
 ### A7. NAT gateways
 
 Number of NAT gateways:
 
-<answer>
+<0>
 
 Can a server in a new private subnet download updates? Why?
 
-<answer>
+<No. There is no NAT gateway to provide the private subnet with an outbound path to the internet.>
 
 ### A8. The network ACL
 
